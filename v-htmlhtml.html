@@ -7,8 +7,7 @@
 </head>
     <body>
         <div id="directives">
-            <h1 v-show="isLogged">Seja bem-vindo!</h1>
-            <h1 v-if="isLogged">Seja bem-vindo!</h1>
+            <div v-html="headerHTML"></div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
@@ -16,7 +15,10 @@
             let app = new Vue ({
                     el: '#directives',
                     data: {
-                        isLogged: true
+                        headerHTML: `
+                            <header style="text-align: center;"> Treinamento</header>
+                            <img src="./assets/logo-hcode.svg" style="margin:auto 30%">
+                        `
                     }
                 });
         </script>
